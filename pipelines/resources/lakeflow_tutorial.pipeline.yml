@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    lakeflow_tutorial:
+      name: lakeflow_tutorial
+      libraries:
+        - glob:
+            include: ../src/auto_cdc_pipeline/transformations/**
+      catalog: workspace
+      channel: CURRENT
+      continuous: false
+      photon: true
+      root_path: ../src/auto_cdc_pipeline
+      schema: lakeflow_examples
+      serverless: true
